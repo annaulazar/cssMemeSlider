@@ -134,8 +134,8 @@ input[type='radio'] {
     height: 2vh;
     border-radius: 50%;
     outline: 0.3vh solid var(--color-buttom);
-    outline-offset: -1.3vh;
-    border: 1vh solid var(--color-fone);
+    outline-offset: -1.5vh;
+    border: 1.2vh solid var(--color-fone);
     box-sizing: content-box;
     cursor: pointer;
     transition: all 0.5s;
@@ -161,7 +161,7 @@ input[type='radio'] {
     background-color: var(--color-dark);
 }
 
-@media (max-width: 750px) {
+@media (max-width: 650px) {
     .slider {
         gap: 2vh;
     }
