@@ -1,0 +1,38 @@
+:root {
+    --color-fone: #0e2655;
+    --color-text: #f6f6f6;
+}
+
+@font-face {
+    font-family: Georgia;
+    src: url("./fonts/georgia/georgia-regular.ttf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Georgia;
+    src: url("./fonts/georgia/georgia-bold.ttf");
+    font-weight: bold;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    color: var(--color-text);
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 40px;
+    max-width: 940px;
+    width: 100%;
+}
+
+.main {
+    background-color: var(--color-fone);
+}
