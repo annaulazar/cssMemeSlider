@@ -1,6 +1,8 @@
 :root {
     --color-fone: #0e2655;
-    --color-text: #f6f6f6;
+    --color-light: #f6f6f6;
+    --color-dark: #CDCDCD;
+    --color-buttom: #4a85c0;
 }
 
 @font-face {
@@ -23,16 +25,21 @@ body {
     font-family: 'Georgia', sans-serif;
     font-size: 40px;
     font-weight: 400;
-    color: var(--color-text);
+    color: var(--color-light);
 }
 
 .container {
     margin: 0 auto;
-    padding: 0 40px;
-    max-width: 940px;
+    padding: 0 3vw;
+    max-width: 1200px;
     width: 100%;
 }
 
 .main {
     background-color: var(--color-fone);
+}
+
+.slider {
+    padding-top: 2vh;
+    width: 100%;
 }
