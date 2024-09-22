@@ -1,0 +1,178 @@
+:root {
+    --color-fone: #0e2655;
+    --color-light: #f6f6f6;
+    --color-dark: #b6b4b4;
+    --color-buttom: #4a85c0;
+}
+
+@font-face {
+    font-family: Georgia;
+    src: url("./fonts/georgia/georgia-regular.ttf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Georgia;
+    src: url("./fonts/georgia/georgia-bold.ttf");
+    font-weight: bold;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', sans-serif;
+    font-size: 2vh;
+    font-weight: 400;
+    color: var(--color-light);
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 3vw;
+    max-width: 120vh;
+    width: 100%;
+}
+
+.main {
+    height: 100vh;
+    background-color: var(--color-fone);
+}
+
+.slider {
+    display: flex;
+    flex-direction: column;
+    gap: 4vh;
+    padding-top: 2vh;
+    width: 100%;
+}
+
+.slider_items {
+    width: 100%;
+    height: 80vmin;
+    box-shadow: -1vh 1vh 4vh rgba(0, 0, 0, .5);
+    order: -1;
+}
+
+.slider_item {
+    height: inherit;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-color: var(--color-dark);
+    display: none;
+    opacity: 0;
+}
+
+.item1 {
+    background-image: url("img/slide1.jpg");
+}
+
+.item2 {
+    background-image: url("img/slide2.jpg");
+}
+
+.item3 {
+    background-image: url("img/slide3.jpg");
+}
+
+.item4 {
+    background-image: url("img/slide4.jpg");
+}
+
+.controls:has(#slide1:checked) ~ .slider_items > .item1,
+.controls:has(#slide2:checked) ~ .slider_items > .item2,
+.controls:has(#slide3:checked) ~ .slider_items > .item3,
+.controls:has(#slide4:checked) ~ .slider_items > .item4 {
+    display: block;
+    opacity: 1;
+    animation: show 2s forwards;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titles {
+    order: -1;
+}
+
+.slider_title {
+    display: none;
+    opacity: 0;
+}
+
+.buttons:has(#slide1:checked) + .titles > .slide1,
+.buttons:has(#slide2:checked) + .titles > .slide2,
+.buttons:has(#slide3:checked) + .titles > .slide3,
+.buttons:has(#slide4:checked) + .titles > .slide4 {
+    display: block;
+    opacity: 1;
+    animation: show 2s forwards;
+}
+
+@keyframes show {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+input[type='radio'] {
+    display: none;
+}
+
+.buttons {
+    display: flex;
+    gap: 0.6vw;
+}
+
+.radio {
+    width: 2vh;
+    height: 2vh;
+    border-radius: 50%;
+    outline: 0.3vh solid var(--color-buttom);
+    outline-offset: -1.5vh;
+    border: 1.2vh solid var(--color-fone);
+    box-sizing: content-box;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.radio:has(> input:not(:checked)) {
+    background-color: var(--color-buttom);
+}
+
+.radio:hover {
+    outline-color: var(--color-light);
+}
+
+.radio:active {
+    outline-color: var(--color-dark);
+}
+
+.radio:has(> input:not(:checked)):hover {
+    background-color: var(--color-light);
+}
+
+.radio:has(> input:not(:checked)):active {
+    background-color: var(--color-dark);
+}
+
+@media (max-width: 650px) {
+    .slider {
+        gap: 2vh;
+    }
+    .controls {
+        flex-direction: column;
+        gap: 2vh;
+    }
+    .buttons {
+        order: -1;
+    }
+    .titles {
+        align-self: flex-start;
+    }
+}
